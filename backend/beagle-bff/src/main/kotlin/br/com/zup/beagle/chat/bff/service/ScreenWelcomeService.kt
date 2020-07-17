@@ -5,5 +5,5 @@ import org.springframework.stereotype.Service
 
 @Service
 class ScreenWelcomeService {
-    fun createScreenWelcome() = ScreenWelcomeBuilder
+    fun createScreenWelcome() = ScreenWelcomeBuilder()
 }
