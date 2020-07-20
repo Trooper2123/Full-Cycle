@@ -1,0 +1,26 @@
+name: BeagleChat Backend Pull Request
+
+on:
+    push:
+        branches:
+            - master
+    pull_request:
+        paths:
+            - 'backend/**'
+jobs:
+    pr-verification:
+        name: PR Check
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v2
+
+            -   name: Cache maven dependences
+                uses: actions/cache@v2
+                env:
+                    maven-cache-key: maven-cache
+                    maven-path: ~/.m2
+                with:
+                    path: ${{ env.maven-path }}
+                    key: ${{ runner.os }}-build-${{ env.maven-cache-key }}-${{ hashFiles('backend/**/pom.xml') }}
+            -   name: Run pr check
+                run: mvn -f backend/pom.xml clean package
