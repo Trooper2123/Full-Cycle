@@ -19,14 +19,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let beagleScreen = Beagle.screen(
-            .declarative(
-                   TestScreen().testScreen()
-              )
+            .remote(.init(url: "http://localhost:8080/welcome"))
         )
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = beagleScreen
-        window?.makeKeyAndVisible()    }
+        window?.makeKeyAndVisible()
+        
+    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
