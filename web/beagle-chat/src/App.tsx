@@ -6,7 +6,7 @@ import BeagleService from './beagle/beagle-service';
 function App() {
   return (
     <BeagleProvider value={BeagleService}>
-      <BeagleRemoteView path={'/payload.json'} />
+      <BeagleRemoteView path={'/welcome'} />
     </BeagleProvider>
   );
 }
