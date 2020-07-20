@@ -1,2 +1,0 @@
-# BeagleChat
-Project: BeagleChat
