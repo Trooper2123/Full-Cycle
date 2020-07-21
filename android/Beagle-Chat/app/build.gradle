@@ -8,8 +8,8 @@ android {
     buildToolsVersion "30.0.0"
 
     defaultConfig {
-        applicationId "com.example.beagle_chat"
-        minSdkVersion 22
+        applicationId "br.com.zup.beagle.chat"
+        minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
