@@ -1,4 +1,4 @@
-package br.com.zup.beagle.chat.webSocket.config
+package br.com.zup.beagle.chat.config
 
 import org.springframework.context.annotation.Configuration
 import org.springframework.messaging.simp.config.MessageBrokerRegistry
