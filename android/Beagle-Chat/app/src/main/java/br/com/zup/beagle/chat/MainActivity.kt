@@ -1,4 +1,4 @@
-package com.example.beagle_chat
+package br.com.zup.beagle.chat
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.zup.beagle.android.view.BeagleActivity

@@ -1,4 +1,4 @@
-package com.example.beagle_chat
+package br.com.zup.beagle.chat
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

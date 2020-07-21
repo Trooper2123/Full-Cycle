@@ -1,4 +1,4 @@
-package com.example.beagle_chat.beagle
+package br.com.zup.beagle.chat.config
 
 import br.com.zup.beagle.android.annotation.BeagleComponent
 import br.com.zup.beagle.android.setup.BeagleConfig

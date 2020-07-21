@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.beagle_chat">
+    package="br.com.zup.beagle.chat">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,10 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        android:name="com.example.beagle_chat.beagle.AppApplication"
+        android:name="br.com.zup.beagle.chat.config.AppApplication"
         tools:ignore="MissingClass">
-        <activity android:name="com.example.beagle_chat.beagle.AppBeagleActivity"></activity>
-        <activity android:name="com.example.beagle_chat.MainActivity">
+        <activity android:name="br.com.zup.beagle.chat.config.AppBeagleActivity"></activity>
+        <activity android:name="br.com.zup.beagle.chat.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

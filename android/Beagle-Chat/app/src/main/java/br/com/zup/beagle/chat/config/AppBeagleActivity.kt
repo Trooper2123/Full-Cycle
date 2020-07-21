@@ -1,4 +1,4 @@
-package com.example.beagle_chat.beagle
+package br.com.zup.beagle.chat.config
 
 import android.os.Bundle
 import android.view.View
@@ -7,7 +7,7 @@ import androidx.appcompat.widget.Toolbar
 import br.com.zup.beagle.android.annotation.BeagleComponent
 import br.com.zup.beagle.android.view.BeagleActivity
 import br.com.zup.beagle.android.view.ServerDrivenState
-import com.example.beagle_chat.R
+import br.com.zup.beagle.chat.R
 import com.google.android.material.snackbar.Snackbar
 
 @BeagleComponent
@@ -21,7 +21,8 @@ class AppBeagleActivity : BeagleActivity() {
         setContentView(R.layout.activity_app_beagle)
     }
 
-    override fun getServerDrivenContainerId(): Int = R.id.server_driven_container
+    override fun getServerDrivenContainerId(): Int =
+        R.id.server_driven_container
 
     override fun getToolbar(): Toolbar = mToolbar
 
