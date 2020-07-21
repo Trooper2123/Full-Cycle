@@ -1,6 +1,6 @@
-package br.com.zup.beagle.chat.webSocket.controller
+package br.com.zup.beagle.chat.controller
 
-import br.com.zup.beagle.chat.webSocket.model.WebSocketChatMessage
+import br.com.zup.beagle.chat.model.WebSocketChatMessage
 import org.springframework.messaging.handler.annotation.MessageMapping
 import org.springframework.messaging.handler.annotation.Payload
 import org.springframework.messaging.handler.annotation.SendTo

@@ -1,4 +1,4 @@
-package br.com.zup.beagle.chat.webSocket.model
+package br.com.zup.beagle.chat.model
 
 class WebSocketChatMessage {
     var type: String? = null
