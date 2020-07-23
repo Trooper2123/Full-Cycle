@@ -26,8 +26,8 @@ jobs:
     - name: Run Kotlin Linter
       run: ./gradlew ktlintStagingDebugCheck
     - name: Run Android Linter
-      run: ./gradlew lintStagingDebug
+      run: ./android/Beagle-Chat/gradlew lintStagingDebug
     - name: Unit tests
-      run: ./gradlew test --stacktrace
+      run: ./android/Beagle-Chat/gradlew test --stacktrace
     - name: Assemble Debug APK
-      run: ./gradlew assembleStagingDebug
+      run: ./android/Beagle-Chat/gradlew assembleStagingDebug
