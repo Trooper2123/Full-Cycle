@@ -1,0 +1,27 @@
+name: Android Feature Branch CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+        paths:
+            - 'android/**'
+
+jobs:
+  test:
+    name: PR Check
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Cache gradle dependences
+      uses: actions/cache@v2
+      env:
+          gradle-cache-key: gradle-cache
+          gradle-path: ~/.gradle
+      with:
+          path: ${{ env.gradle-path }}
+          key: ${{ runner.os }}-build-${{ env.gradle-cache-key }}-${{ hashFiles('android/Beagle-Chat/buildSrc/**') }}
+    - name: Unit tests
+      run: bash ./gradlew test --stacktrace
