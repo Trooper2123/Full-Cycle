@@ -24,7 +24,7 @@ jobs:
           path: ${{ env.gradle-path }}
           key: ${{ runner.os }}-build-${{ env.gradle-cache-key }}-${{ hashFiles('android/Beagle-Chat/buildSrc/**') }}
     - name: Run Kotlin Linter
-      run: ./gradlew ktlintStagingDebugCheck
+      run: ./android/Beagle-Chat/gradlew ktlintStagingDebugCheck
     - name: Run Android Linter
       run: ./android/Beagle-Chat/gradlew lintStagingDebug
     - name: Unit tests
