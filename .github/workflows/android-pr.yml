@@ -29,7 +29,5 @@ jobs:
       with:
           path: ${{ env.gradle-path }}
           key: ${{ runner.os }}-build-${{ env.gradle-cache-key }}-${{ hashFiles('android/Beagle-Chat/buildSrc/**') }}
-    - name: Unit tests
-      run: ./android/Beagle-Chat/gradlew test --stacktrace
     - name: Build with Gradle
       run: ./android/Beagle-Chat/gradlew build
