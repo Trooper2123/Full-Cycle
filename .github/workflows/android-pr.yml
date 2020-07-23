@@ -1,4 +1,4 @@
-name: Android Feature Branch CI
+name: BeagleChat Android Pull Request
 
 on:
   push:
@@ -23,5 +23,11 @@ jobs:
       with:
           path: ${{ env.gradle-path }}
           key: ${{ runner.os }}-build-${{ env.gradle-cache-key }}-${{ hashFiles('android/Beagle-Chat/buildSrc/**') }}
+    - name: Run Kotlin Linter
+      run: ./gradlew ktlintStagingDebugCheck
+    - name: Run Android Linter
+      run: ./gradlew lintStagingDebug
     - name: Unit tests
-      run: bash ./gradlew test --stacktrace
+      run: ./gradlew test --stacktrace
+    - name: Assemble Debug APK
+      run: ./gradlew assembleStagingDebug
