@@ -8,15 +8,15 @@ function connect(event) {
 	if (name) {
 		document.querySelector('#welcome-page').classList.add('hidden');
 		document.querySelector('#dialogue-page').classList.remove('hidden');
-		var socket = new SockJS('/websocket');
+		var socket = new SockJS('/beagle-chat');
 		stompClient = Stomp.over(socket);
 		stompClient.connect({}, connectionSuccess);
 	}
 	event.preventDefault();
 }
 function connectionSuccess() {
-	stompClient.subscribe('/topic/websocket', onMessageReceived);
-	stompClient.send("/app/chat.newUser", {}, JSON.stringify({
+	stompClient.subscribe('/topic/beagle-chat', onMessageReceived);
+	stompClient.send("/app/newUser", {}, JSON.stringify({
 		sender : name,
 		type : 'newUser'
 	}))
@@ -29,7 +29,7 @@ function sendMessage(event) {
 			content : document.querySelector('#chatMessage').value,
 			type : 'CHAT'
 		};
-		stompClient.send("/app/chat.sendMessage", {}, JSON
+		stompClient.send("/app/sendMessage", {}, JSON
 				.stringify(chatMessage));
 		document.querySelector('#chatMessage').value = '';
 	}
