@@ -1,4 +1,4 @@
-package br.com.zup.beagle.chat.controller
+package br.com.zup.beagle.chat.consumer
 
 import br.com.zup.beagle.chat.model.WebSocketChatMessage
 import org.springframework.beans.factory.annotation.Autowired
@@ -14,7 +14,7 @@ import java.sql.DriverManager.println
 @Component
 class WebSocketEventListener {
     @Autowired(required = true)
-    private val messagingTemplate: SimpMessageSendingOperations? = null
+    val messagingTemplate: SimpMessageSendingOperations? = null
 
     @EventListener
     fun handleWebSocketConnectListener(event: SessionConnectedEvent?) {
@@ -26,10 +26,10 @@ class WebSocketEventListener {
         val headerAccessor = StompHeaderAccessor.wrap(event.message)
         val username = headerAccessor.sessionAttributes!!["username"] as String?
         if (username != null) {
-            val ChatMessage = WebSocketChatMessage()
-            ChatMessage.type = "Leave"
-            ChatMessage.sender = username
-            messagingTemplate!!.convertAndSend("/topic/websocket", ChatMessage)
+            val chatMessage = WebSocketChatMessage()
+            chatMessage.type = "Leave"
+            chatMessage.sender = username
+            messagingTemplate!!.convertAndSend("/topic/beagle-chat", chatMessage)
         }
     }
 }

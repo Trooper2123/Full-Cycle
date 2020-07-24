@@ -10,21 +10,13 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @EnableWebSocketMessageBroker
 class WebSocketConfig : WebSocketMessageBrokerConfigurer {
     override fun registerStompEndpoints(registry: StompEndpointRegistry) {
-        registry.addEndpoint("/websocket").withSockJS()
+        registry.addEndpoint("/beagle-chat").setAllowedOrigins("*").withSockJS()
+
     }
 
-    //    USANDO O RABBITMQ
     override fun configureMessageBroker(registry: MessageBrokerRegistry) {
         registry.setApplicationDestinationPrefixes("/app")
-        registry.enableStompBrokerRelay("/topic").setRelayHost("localhost")
-                .setRelayPort(61613)
-                .setClientLogin("guest")
-                .setClientPasscode("guest")
+        registry.enableSimpleBroker("/topic");
     }
 
-    //    NÃO USANDO O RABBITMQ
-   /* override fun configureMessageBroker(registry: MessageBrokerRegistry) {
-        registry.setApplicationDestinationPrefixes("/app")
-        registry.enableSimpleBroker("/topic");
-    }*/
 }
