@@ -7,7 +7,7 @@ import './styles/styles.css'
 function App() {
   return (
     <BeagleProvider value={BeagleService}>
-      <BeagleRemoteView path={'/payload.json'} />
+      <BeagleRemoteView path={'/chat'} />
     </BeagleProvider>
   );
 }

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="497135df-4058-4db2-bf1f-49621934e022" name="Default Changelist" comment="" />
+    <list default="true" id="497135df-4058-4db2-bf1f-49621934e022" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/beagle-bff/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/beagle-bff/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/beagle-chat/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../web/beagle-chat/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/beagle-chat/src/beagle/beagle-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/beagle-chat/src/beagle/beagle-service.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +23,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/beagle-chat" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/beagle-bff" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -35,9 +39,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1595278938628">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="421" y="97" key="FileChooserDialogImpl" timestamp="1595868926392">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1595278938628" />
+    <state x="421" y="97" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1595868926392" />
   </component>
 </project>

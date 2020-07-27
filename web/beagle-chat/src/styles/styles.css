@@ -19,8 +19,14 @@
     
 }
 
-.message-input{
+.custom-footer-chat-component{
     font-size: 25px;
     color: blue;
-    
+}
+
+.custom-input-message-text{
+    width: 500px;
+    height: 100px;
+    background: black;
+    color: white;
 }
