@@ -13,7 +13,7 @@ import br.com.zup.beagle.widget.ui.Text
 import java.awt.Color
 
 
-class ScreenWelcomeBuilder : ScreenBuilder {
+class ScreenChatBuilder : ScreenBuilder {
 
     @BeaglePreview
     override fun build() = Screen(
