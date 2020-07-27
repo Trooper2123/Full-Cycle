@@ -1,6 +1,7 @@
 package br.com.zup.beagle.chat.bff.builder
 
 import br.com.zup.beagle.annotation.BeaglePreview
+import br.com.zup.beagle.chat.bff.components.TextCustom
 import br.com.zup.beagle.core.Style
 import br.com.zup.beagle.ext.applyStyle
 import br.com.zup.beagle.ext.unitReal
@@ -22,11 +23,10 @@ class ScreenChatBuilder : ScreenBuilder {
             ),
             child = Container(
                     children = listOf(
-                            beagleText(text = "BeagleChat",textColor ="#2e856e" ),
+                            TextCustom(message = "BeagleChat", styleId = "textCustom"),
                             beagleText(text = "O chat feito por zuppers para zuppers!",textColor ="#2e856e"),
                             beagleText(text = ":D",textColor ="#2e856e" )
                     )
-
             )
     )
 
