@@ -1,6 +1,5 @@
-package br.com.zup.beagle.chat.bff.components
+package br.com.zup.beagle.chat.bff.components.chat.footer
 
-import br.com.zup.beagle.chat.bff.components.widgets.CustomTextInput
 import br.com.zup.beagle.ext.applyFlex
 import br.com.zup.beagle.widget.core.Flex
 import br.com.zup.beagle.widget.core.FlexDirection
@@ -13,7 +12,7 @@ class CustomFooterChatComponent {
     ): Container {
         return Container(
                 children = listOf(
-                        CustomTextInput(
+                        CustomTextInputComponent(
                                 styleId = "CustomInputMessageText",
                                 placeholder = "TESTANDO",
                                 textColor = "#F8F6F4"

@@ -1,7 +1,7 @@
 package br.com.zup.beagle.chat.bff.builder
 
 import br.com.zup.beagle.annotation.BeaglePreview
-import br.com.zup.beagle.chat.bff.components.CustomFooterChatComponent
+import br.com.zup.beagle.chat.bff.components.chat.footer.CustomFooterChatComponent
 import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.layout.NavigationBar
 import br.com.zup.beagle.widget.layout.Screen
