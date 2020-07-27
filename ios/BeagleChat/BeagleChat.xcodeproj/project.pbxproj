@@ -1,0 +1,684 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		989714B024CF101B0085316C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989714AF24CF101B0085316C /* AppDelegate.swift */; };
+		989714B424CF101B0085316C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989714B324CF101B0085316C /* ViewController.swift */; };
+		989714B924CF10200085316C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 989714B824CF10200085316C /* Assets.xcassets */; };
+		989714C724CF10210085316C /* BeagleChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989714C624CF10210085316C /* BeagleChatTests.swift */; };
+		989714D224CF10210085316C /* BeagleChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989714D124CF10210085316C /* BeagleChatUITests.swift */; };
+		989714E524CF12E10085316C /* HeaderChatWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989714E424CF12E10085316C /* HeaderChatWidget.swift */; };
+		989714E724CF12FC0085316C /* BubbleChatWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989714E624CF12FC0085316C /* BubbleChatWidget.swift */; };
+		989714E924CF13070085316C /* FooterChatWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989714E824CF13070085316C /* FooterChatWidget.swift */; };
+		989714EB24CF13190085316C /* ChatStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989714EA24CF13190085316C /* ChatStyles.swift */; };
+		FEAAAA9EC1509211BACACD36 /* Pods_BeagleChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E512529152CA5C15435DA72D /* Pods_BeagleChat.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		989714C324CF10210085316C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 989714A424CF101B0085316C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 989714AB24CF101B0085316C;
+			remoteInfo = BeagleChat;
+		};
+		989714CE24CF10210085316C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 989714A424CF101B0085316C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 989714AB24CF101B0085316C;
+			remoteInfo = BeagleChat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0387329A0CA3032788E8E2EB /* Pods-BeagleChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeagleChat.release.xcconfig"; path = "Target Support Files/Pods-BeagleChat/Pods-BeagleChat.release.xcconfig"; sourceTree = "<group>"; };
+		989714AC24CF101B0085316C /* BeagleChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeagleChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		989714AF24CF101B0085316C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		989714B324CF101B0085316C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		989714B824CF10200085316C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		989714BD24CF10200085316C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		989714C224CF10210085316C /* BeagleChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeagleChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		989714C624CF10210085316C /* BeagleChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeagleChatTests.swift; sourceTree = "<group>"; };
+		989714C824CF10210085316C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		989714CD24CF10210085316C /* BeagleChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeagleChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		989714D124CF10210085316C /* BeagleChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeagleChatUITests.swift; sourceTree = "<group>"; };
+		989714D324CF10210085316C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		989714E424CF12E10085316C /* HeaderChatWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderChatWidget.swift; sourceTree = "<group>"; };
+		989714E624CF12FC0085316C /* BubbleChatWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleChatWidget.swift; sourceTree = "<group>"; };
+		989714E824CF13070085316C /* FooterChatWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterChatWidget.swift; sourceTree = "<group>"; };
+		989714EA24CF13190085316C /* ChatStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStyles.swift; sourceTree = "<group>"; };
+		E512529152CA5C15435DA72D /* Pods_BeagleChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeagleChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBF7FE37103D2C158D479846 /* Pods-BeagleChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeagleChat.debug.xcconfig"; path = "Target Support Files/Pods-BeagleChat/Pods-BeagleChat.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		989714A924CF101B0085316C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEAAAA9EC1509211BACACD36 /* Pods_BeagleChat.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		989714BF24CF10210085316C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		989714CA24CF10210085316C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		902EBC3EA096FD5EB82A6D8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E512529152CA5C15435DA72D /* Pods_BeagleChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		989714A324CF101B0085316C = {
+			isa = PBXGroup;
+			children = (
+				989714AE24CF101B0085316C /* BeagleChat */,
+				989714C524CF10210085316C /* BeagleChatTests */,
+				989714D024CF10210085316C /* BeagleChatUITests */,
+				989714AD24CF101B0085316C /* Products */,
+				C8BD482624D98D9F043D832B /* Pods */,
+				902EBC3EA096FD5EB82A6D8D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		989714AD24CF101B0085316C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				989714AC24CF101B0085316C /* BeagleChat.app */,
+				989714C224CF10210085316C /* BeagleChatTests.xctest */,
+				989714CD24CF10210085316C /* BeagleChatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		989714AE24CF101B0085316C /* BeagleChat */ = {
+			isa = PBXGroup;
+			children = (
+				989714E024CF12670085316C /* DesignSystem */,
+				989714AF24CF101B0085316C /* AppDelegate.swift */,
+				989714B324CF101B0085316C /* ViewController.swift */,
+				989714B824CF10200085316C /* Assets.xcassets */,
+				989714BD24CF10200085316C /* Info.plist */,
+			);
+			path = BeagleChat;
+			sourceTree = "<group>";
+		};
+		989714C524CF10210085316C /* BeagleChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				989714C624CF10210085316C /* BeagleChatTests.swift */,
+				989714C824CF10210085316C /* Info.plist */,
+			);
+			path = BeagleChatTests;
+			sourceTree = "<group>";
+		};
+		989714D024CF10210085316C /* BeagleChatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				989714D124CF10210085316C /* BeagleChatUITests.swift */,
+				989714D324CF10210085316C /* Info.plist */,
+			);
+			path = BeagleChatUITests;
+			sourceTree = "<group>";
+		};
+		989714DF24CF12610085316C /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				989714EA24CF13190085316C /* ChatStyles.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		989714E024CF12670085316C /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				989714E124CF12880085316C /* CustomWidgets */,
+				989714DF24CF12610085316C /* Styles */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		989714E124CF12880085316C /* CustomWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				989714E224CF12920085316C /* ChatWidgets */,
+			);
+			path = CustomWidgets;
+			sourceTree = "<group>";
+		};
+		989714E224CF12920085316C /* ChatWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				989714E324CF12AC0085316C /* ChatWidgetsTests */,
+				989714E424CF12E10085316C /* HeaderChatWidget.swift */,
+				989714E624CF12FC0085316C /* BubbleChatWidget.swift */,
+				989714E824CF13070085316C /* FooterChatWidget.swift */,
+			);
+			path = ChatWidgets;
+			sourceTree = "<group>";
+		};
+		989714E324CF12AC0085316C /* ChatWidgetsTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChatWidgetsTests;
+			sourceTree = "<group>";
+		};
+		C8BD482624D98D9F043D832B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FBF7FE37103D2C158D479846 /* Pods-BeagleChat.debug.xcconfig */,
+				0387329A0CA3032788E8E2EB /* Pods-BeagleChat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		989714AB24CF101B0085316C /* BeagleChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 989714D624CF10210085316C /* Build configuration list for PBXNativeTarget "BeagleChat" */;
+			buildPhases = (
+				1366AFAA9EE901D1DE2CB2C9 /* [CP] Check Pods Manifest.lock */,
+				989714A824CF101B0085316C /* Sources */,
+				989714A924CF101B0085316C /* Frameworks */,
+				989714AA24CF101B0085316C /* Resources */,
+				FE8164CD343ADBE81778B711 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BeagleChat;
+			productName = BeagleChat;
+			productReference = 989714AC24CF101B0085316C /* BeagleChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		989714C124CF10210085316C /* BeagleChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 989714D924CF10210085316C /* Build configuration list for PBXNativeTarget "BeagleChatTests" */;
+			buildPhases = (
+				989714BE24CF10210085316C /* Sources */,
+				989714BF24CF10210085316C /* Frameworks */,
+				989714C024CF10210085316C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				989714C424CF10210085316C /* PBXTargetDependency */,
+			);
+			name = BeagleChatTests;
+			productName = BeagleChatTests;
+			productReference = 989714C224CF10210085316C /* BeagleChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		989714CC24CF10210085316C /* BeagleChatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 989714DC24CF10210085316C /* Build configuration list for PBXNativeTarget "BeagleChatUITests" */;
+			buildPhases = (
+				989714C924CF10210085316C /* Sources */,
+				989714CA24CF10210085316C /* Frameworks */,
+				989714CB24CF10210085316C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				989714CF24CF10210085316C /* PBXTargetDependency */,
+			);
+			name = BeagleChatUITests;
+			productName = BeagleChatUITests;
+			productReference = 989714CD24CF10210085316C /* BeagleChatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		989714A424CF101B0085316C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = Zup;
+				TargetAttributes = {
+					989714AB24CF101B0085316C = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					989714C124CF10210085316C = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 989714AB24CF101B0085316C;
+					};
+					989714CC24CF10210085316C = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 989714AB24CF101B0085316C;
+					};
+				};
+			};
+			buildConfigurationList = 989714A724CF101B0085316C /* Build configuration list for PBXProject "BeagleChat" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 989714A324CF101B0085316C;
+			productRefGroup = 989714AD24CF101B0085316C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				989714AB24CF101B0085316C /* BeagleChat */,
+				989714C124CF10210085316C /* BeagleChatTests */,
+				989714CC24CF10210085316C /* BeagleChatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		989714AA24CF101B0085316C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				989714B924CF10200085316C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		989714C024CF10210085316C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		989714CB24CF10210085316C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1366AFAA9EE901D1DE2CB2C9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeagleChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE8164CD343ADBE81778B711 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeagleChat/Pods-BeagleChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeagleChat/Pods-BeagleChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeagleChat/Pods-BeagleChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		989714A824CF101B0085316C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				989714E924CF13070085316C /* FooterChatWidget.swift in Sources */,
+				989714E524CF12E10085316C /* HeaderChatWidget.swift in Sources */,
+				989714E724CF12FC0085316C /* BubbleChatWidget.swift in Sources */,
+				989714EB24CF13190085316C /* ChatStyles.swift in Sources */,
+				989714B424CF101B0085316C /* ViewController.swift in Sources */,
+				989714B024CF101B0085316C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		989714BE24CF10210085316C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				989714C724CF10210085316C /* BeagleChatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		989714C924CF10210085316C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				989714D224CF10210085316C /* BeagleChatUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		989714C424CF10210085316C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 989714AB24CF101B0085316C /* BeagleChat */;
+			targetProxy = 989714C324CF10210085316C /* PBXContainerItemProxy */;
+		};
+		989714CF24CF10210085316C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 989714AB24CF101B0085316C /* BeagleChat */;
+			targetProxy = 989714CE24CF10210085316C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		989714D424CF10210085316C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		989714D524CF10210085316C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		989714D724CF10210085316C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBF7FE37103D2C158D479846 /* Pods-BeagleChat.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BeagleChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.br.zup.BeagleChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		989714D824CF10210085316C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0387329A0CA3032788E8E2EB /* Pods-BeagleChat.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BeagleChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.br.zup.BeagleChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		989714DA24CF10210085316C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BeagleChatTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.br.zup.BeagleChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeagleChat.app/BeagleChat";
+			};
+			name = Debug;
+		};
+		989714DB24CF10210085316C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BeagleChatTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.br.zup.BeagleChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeagleChat.app/BeagleChat";
+			};
+			name = Release;
+		};
+		989714DD24CF10210085316C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BeagleChatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.br.zup.BeagleChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BeagleChat;
+			};
+			name = Debug;
+		};
+		989714DE24CF10210085316C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BeagleChatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.br.zup.BeagleChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BeagleChat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		989714A724CF101B0085316C /* Build configuration list for PBXProject "BeagleChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				989714D424CF10210085316C /* Debug */,
+				989714D524CF10210085316C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		989714D624CF10210085316C /* Build configuration list for PBXNativeTarget "BeagleChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				989714D724CF10210085316C /* Debug */,
+				989714D824CF10210085316C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		989714D924CF10210085316C /* Build configuration list for PBXNativeTarget "BeagleChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				989714DA24CF10210085316C /* Debug */,
+				989714DB24CF10210085316C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		989714DC24CF10210085316C /* Build configuration list for PBXNativeTarget "BeagleChatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				989714DD24CF10210085316C /* Debug */,
+				989714DE24CF10210085316C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 989714A424CF101B0085316C /* Project object */;
+}
