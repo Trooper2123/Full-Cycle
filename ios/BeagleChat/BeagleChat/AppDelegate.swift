@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
 //        Beagle.registerCustomComponent("Name", componentType: Component.class)
-        let beagleScreen = Beagle.screen(.remote(.init(url: "http://localhost:8080/chat")))
+        let beagleScreen = Beagle.screen(.remote(.init(url: "http://localhost:8080/welcome")))
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = beagleScreen
