@@ -25,15 +25,12 @@ class WebSocketEventListener {
     @EventListener
     fun handleWebSocketDisconnectListener(event: SessionDisconnectEvent) {
         val headerAccessor = StompHeaderAccessor.wrap(event.message)
-        val username = headerAccessor.sessionAttributes!!["username"] as String?
-        val roomId = headerAccessor.sessionAttributes!!["room_id"] as String?
+        val username = headerAccessor.sessionAttributes?.get("username") as String?
         if (username != null) {
-            println("User Disconnected: $username")
             val chatMessage = WebSocketChatMessage()
             chatMessage.type = "Leave"
             chatMessage.sender = username
-            messagingTemplate!!.convertAndSend(format("/topic/%s",roomId), chatMessage)
-
+            messagingTemplate?.convertAndSend("/topic/beagle-chat", chatMessage)
         }
     }
 }
