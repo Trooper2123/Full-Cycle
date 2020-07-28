@@ -39,24 +39,24 @@ class WebSocketChatController {
 
     //Chat Room path
 
-    @MessageMapping("/chat/{roomId}/sendMessage")
-    fun sendMessage(@DestinationVariable roomId: String, @Payload chatMessage: WebSocketChatMessage) {
-        logger.info(roomId + " Chat message Recived is "+ chatMessage.content)
-        messagingTemplate?.convertAndSend(format("/topic/%s",roomId),chatMessage)
+    @MessageMapping("/chat/{channelName}/sendMessage")
+    fun sendMessage(@DestinationVariable channelName: String, @Payload chatMessage: WebSocketChatMessage) {
+        logger.info(channelName + " Chat message Recived is "+ chatMessage.content)
+        messagingTemplate?.convertAndSend(format("/topic/%s",channelName),chatMessage)
 
     }
 
-    @MessageMapping("/chat/{roomId}/addUser")
-    fun addUser(@DestinationVariable roomId: String, @Payload chatMessage: WebSocketChatMessage,
+    @MessageMapping("/chat/{channelName}/addUser")
+    fun addUser(@DestinationVariable channelName: String, @Payload chatMessage: WebSocketChatMessage,
                 headerAccessor: SimpMessageHeaderAccessor) {
-        val currentRoomId = headerAccessor.sessionAttributes?.put("room_id", roomId) as String?
-        if (currentRoomId != null) {
+        val currentChannel = headerAccessor.sessionAttributes?.put("channel_name", channelName) as String?
+        if (currentChannel != null) {
             val leaveMessage = WebSocketChatMessage()
             leaveMessage.type = "Leave"
             leaveMessage.sender
-            messagingTemplate?.convertAndSend(format("/topic/%s", currentRoomId), leaveMessage)
+            messagingTemplate?.convertAndSend(format("/topic/%s", currentChannel), leaveMessage)
         }
         headerAccessor.sessionAttributes?.put("name",chatMessage.sender)
-        messagingTemplate?.convertAndSend(format("/topic/%s",roomId), chatMessage)
+        messagingTemplate?.convertAndSend(format("/topic/%s",channelName), chatMessage)
     }
 }

@@ -2,10 +2,10 @@
 
 var usernamePage = document.querySelector('#userJoin');
 var chatPage = document.querySelector('#chatPage');
-var room = $('#room');
+var channel = $('#channel');
 var name = $("#name").val().trim();
 var waiting = document.querySelector('.waiting');
-var roomIdDisplay = document.querySelector('#room-id-display');
+var channelNameDisplay = document.querySelector('#channel-name-display');
 var stompClient = null;
 var currentSubscription;
 var topic = null;
@@ -25,7 +25,7 @@ function connect(event) {
 
 
 function onConnected() {
-	enterRoom(room.val());
+	enterChannel(channel.val());
 	waiting.classList.add('d-none');
 
 }
@@ -34,13 +34,13 @@ function onError(error) {
 	waiting.textContent = 'uh oh! service unavailable :´(';
 }
 
-function enterRoom(newRoomId) {
-	var roomId = newRoomId;
-	Cookies.set('roomId', room);
-	roomIdDisplay.textContent = roomId;
-	topic = `/app/chat/${newRoomId}`;
+function enterChannel(newChannelName) {
+	var channelName = newChannelName;
+	Cookies.set('channelName', channel);
+	channelNameDisplay.textContent = channelName;
+	topic = `/app/chat/${newChannelName}`;
 
-	currentSubscription = stompClient.subscribe(`/topic/${roomId}`, onMessageReceived);
+	currentSubscription = stompClient.subscribe(`/topic/${channelName}`, onMessageReceived);
 	var username = $("#name").val().trim();
 	stompClient.send(`${topic}/addUser`,
 		{},
@@ -48,15 +48,12 @@ function enterRoom(newRoomId) {
 	);
 }
 
-function onMessageReceived(payload) {
-
-}
 
 function sendMessage(event) {
 	var messageContent = $("#message").val().trim();
 	var username = $("#name").val().trim();
-	var newRoomId = $('#room').val().trim();
-	topic = `/app/chat/${newRoomId}`;
+	var newChannelName = $('#channel').val().trim();
+	topic = `/app/chat/${newChannelName}`;
 	if(messageContent && stompClient) {
 		var chatMessage = {
 			sender: username,
