@@ -1,10 +1,8 @@
 'use strict';
 
-
-var stompClient = null;
 var usernamePage = document.querySelector('#userJoin');
 var chatPage = document.querySelector('#chatPage');
-var room = $('#room').val().trim();
+var room = $('#room');
 var name = $("#name").val().trim();
 var waiting = document.querySelector('.waiting');
 var roomIdDisplay = document.querySelector('#room-id-display');
@@ -12,6 +10,7 @@ var stompClient = null;
 var currentSubscription;
 var topic = null;
 var username;
+
 
 function connect(event) {
 	var name1 = $("#name").val().trim();
@@ -42,6 +41,7 @@ function enterRoom(newRoomId) {
 	topic = `/app/chat/${newRoomId}`;
 
 	currentSubscription = stompClient.subscribe(`/topic/${roomId}`, onMessageReceived);
+	var username = $("#name").val().trim();
 	stompClient.send(`${topic}/addUser`,
 		{},
 		JSON.stringify({sender: username, type: 'JOIN'})
@@ -54,6 +54,8 @@ function onMessageReceived(payload) {
 
 function sendMessage(event) {
 	var messageContent = $("#message").val().trim();
+	var username = $("#name").val().trim();
+	var newRoomId = $('#room').val().trim();
 	topic = `/app/chat/${newRoomId}`;
 	if(messageContent && stompClient) {
 		var chatMessage = {
