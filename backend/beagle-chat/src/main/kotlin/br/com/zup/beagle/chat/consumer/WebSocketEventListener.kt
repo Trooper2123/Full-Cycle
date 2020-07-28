@@ -12,12 +12,12 @@ import org.springframework.web.socket.messaging.SessionConnectedEvent
 import org.springframework.web.socket.messaging.SessionDisconnectEvent
 import java.lang.String.format
 import java.sql.DriverManager.println
+import java.text.MessageFormat.format
 
 
 @Component
 class WebSocketEventListener {
-
-    private val logger: Logger = LoggerFactory.getLogger(WebSocketEventListener::class.java)
+private val logger: Logger = LoggerFactory.getLogger(WebSocketEventListener::class.java)
 
     @Autowired
     val messagingTemplate: SimpMessageSendingOperations? = null
