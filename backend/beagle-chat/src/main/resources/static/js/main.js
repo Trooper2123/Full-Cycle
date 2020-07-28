@@ -31,7 +31,7 @@ function onConnected() {
 }
 
 function onError(error) {
-	waiting.textContent = 'uh oh! service unavailable';
+	waiting.textContent = 'uh oh! service unavailable :´(';
 }
 
 function enterRoom(newRoomId) {
