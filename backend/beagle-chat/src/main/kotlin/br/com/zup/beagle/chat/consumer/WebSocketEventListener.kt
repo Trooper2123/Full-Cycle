@@ -9,11 +9,12 @@ import org.springframework.stereotype.Component
 import org.springframework.web.socket.messaging.SessionConnectedEvent
 import org.springframework.web.socket.messaging.SessionDisconnectEvent
 import java.sql.DriverManager.println
+import java.text.MessageFormat.format
 
 
 @Component
 class WebSocketEventListener {
-    @Autowired(required = true)
+    @Autowired
     val messagingTemplate: SimpMessageSendingOperations? = null
 
     @EventListener
@@ -25,11 +26,14 @@ class WebSocketEventListener {
     fun handleWebSocketDisconnectListener(event: SessionDisconnectEvent) {
         val headerAccessor = StompHeaderAccessor.wrap(event.message)
         val username = headerAccessor.sessionAttributes!!["username"] as String?
+        val roomId = headerAccessor.sessionAttributes!!["room_id"] as String?
         if (username != null) {
+            println("User Disconnected: $username")
             val chatMessage = WebSocketChatMessage()
             chatMessage.type = "Leave"
             chatMessage.sender = username
-            messagingTemplate!!.convertAndSend("/topic/beagle-chat", chatMessage)
+            messagingTemplate!!.convertAndSend(format("/topic/%s",roomId), chatMessage)
+
         }
     }
 }
