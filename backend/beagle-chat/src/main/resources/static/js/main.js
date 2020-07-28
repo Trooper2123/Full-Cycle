@@ -1,65 +1,119 @@
 'use strict';
-document.querySelector('#welcomeForm').addEventListener('submit', connect, true)
-document.querySelector('#dialogueForm').addEventListener('submit', sendMessage, true)
+
+
 var stompClient = null;
-var name = null;
+var usernamePage = document.querySelector('#userJoin');
+var chatPage = document.querySelector('#chatPage');
+var room = $('#room').val().trim();
+var name = $("#name").val().trim();
+var waiting = document.querySelector('.waiting');
+var roomIdDisplay = document.querySelector('#room-id-display');
+var stompClient = null;
+var currentSubscription;
+var topic = null;
+var username;
+
 function connect(event) {
-	name = document.querySelector('#name').value.trim();
-	if (name) {
-		document.querySelector('#welcome-page').classList.add('hidden');
-		document.querySelector('#dialogue-page').classList.remove('hidden');
-		var socket = new SockJS('/beagle-chat');
-		stompClient = Stomp.over(socket);
-		stompClient.connect({}, connectionSuccess);
-	}
+	var name1 = $("#name").val().trim();
+	Cookies.set('name', name1);
+	usernamePage.classList.add('d-none');
+	chatPage.classList.remove('d-none');
+	var socket = new SockJS('/beagle-chat');
+	stompClient = Stomp.over(socket);
+	stompClient.connect({}, onConnected, onError);
 	event.preventDefault();
 }
-function connectionSuccess() {
-	stompClient.subscribe('/topic/beagle-chat', onMessageReceived);
-	stompClient.send("/app/newUser", {}, JSON.stringify({
-		sender : name,
-		type : 'newUser'
-	}))
+
+
+function onConnected() {
+	enterRoom(room.val());
+	waiting.classList.add('d-none');
+
 }
+
+function onError(error) {
+	waiting.textContent = 'uh oh! service unavailable';
+}
+
+function enterRoom(newRoomId) {
+	var roomId = newRoomId;
+	Cookies.set('roomId', room);
+	roomIdDisplay.textContent = roomId;
+	topic = `/app/chat/${newRoomId}`;
+
+	currentSubscription = stompClient.subscribe(`/topic/${roomId}`, onMessageReceived);
+	stompClient.send(`${topic}/addUser`,
+		{},
+		JSON.stringify({sender: username, type: 'JOIN'})
+	);
+}
+
+function onMessageReceived(payload) {
+
+}
+
 function sendMessage(event) {
-	var messageContent = document.querySelector('#chatMessage').value.trim();
-	if (messageContent && stompClient) {
+	var messageContent = $("#message").val().trim();
+	topic = `/app/chat/${newRoomId}`;
+	if(messageContent && stompClient) {
 		var chatMessage = {
-			sender : name,
-			content : document.querySelector('#chatMessage').value,
-			type : 'CHAT'
+			sender: username,
+			content: messageContent,
+			type: 'CHAT'
 		};
-		stompClient.send("/app/sendMessage", {}, JSON
-				.stringify(chatMessage));
-		document.querySelector('#chatMessage').value = '';
+
+		stompClient.send(`${topic}/sendMessage`, {}, JSON.stringify(chatMessage));
+		document.querySelector('#message').value = '';
 	}
 	event.preventDefault();
 }
+
 function onMessageReceived(payload) {
 	var message = JSON.parse(payload.body);
 	var messageElement = document.createElement('li');
-	if (message.type === 'newUser') {
-		messageElement.classList.add('event-data');
-		message.content = message.sender + ' has joined the chat';
-	} else if (message.type === 'Leave') {
-		messageElement.classList.add('event-data');
-		message.content = message.sender + ' has left the chat';
+	var divCard = document.createElement('div');
+	divCard.className = 'card';
+
+	if(message.type === 'JOIN') {
+		messageElement.classList.add('event-message');
+		message.content = message.sender + ' joined!';
+	} else if (message.type === 'LEAVE') {
+		messageElement.classList.add('event-message');
+		message.content = message.sender + ' left!';
 	} else {
-		messageElement.classList.add('message-data');
-		var element = document.createElement('i');
-		var text = document.createTextNode(message.sender[0]);
-		element.appendChild(text);
-		messageElement.appendChild(element);
+		messageElement.classList.add('chat-message');
+
+		var avatarElement = document.createElement('i');
+		var avatarText = document.createTextNode(message.sender[0]);
+		avatarElement.appendChild(avatarText);
+
+		messageElement.appendChild(avatarElement);
+
 		var usernameElement = document.createElement('span');
 		var usernameText = document.createTextNode(message.sender);
 		usernameElement.appendChild(usernameText);
 		messageElement.appendChild(usernameElement);
+
+
+
+		var divCardBody = document.createElement('div');
+		divCardBody.className = 'card-body';
+
+		divCardBody.appendChild(messageElement);
+		divCard.appendChild(divCardBody);
 	}
+
 	var textElement = document.createElement('p');
 	var messageText = document.createTextNode(message.content);
 	textElement.appendChild(messageText);
+
 	messageElement.appendChild(textElement);
-	document.querySelector('#messageList').appendChild(messageElement);
-	document.querySelector('#messageList').scrollTop = document
-			.querySelector('#messageList').scrollHeight;
+	var messageArea = document.querySelector('#messageArea');
+	messageArea.appendChild(divCard);
+	messageArea.scrollTop = messageArea.scrollHeight;
 }
+
+$(document).ready(function() {
+	userJoinForm.addEventListener('submit', connect, true);
+	messagebox.addEventListener('submit', sendMessage, true);
+});
