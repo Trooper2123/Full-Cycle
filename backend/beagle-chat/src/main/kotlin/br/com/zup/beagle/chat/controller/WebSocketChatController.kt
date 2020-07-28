@@ -22,20 +22,20 @@ class WebSocketChatController {
     @Autowired
     private val messagingTemplate: SimpMessageSendingOperations? = null
 
-    // all users in the same room
+    // v 0.1
 
-//    @MessageMapping("/sendMessage")
-//    @SendTo("/topic/beagle-chat")
-//    fun sendMessage(@Payload webSocketChatMessage: WebSocketChatMessage): WebSocketChatMessage {
-//        return webSocketChatMessage
-//    }
-//
-//    @MessageMapping("/newUser")
-//    @SendTo("/topic/beagle-chat")
-//    fun newUser(@Payload webSocketChatMessage: WebSocketChatMessage, headerAccessor: SimpMessageHeaderAccessor): WebSocketChatMessage {
-//        headerAccessor.sessionAttributes?.put("username", webSocketChatMessage.sender)
-//        return webSocketChatMessage
-//    }
+    @MessageMapping("/sendMessage")
+    @SendTo("/topic/beagle-chat")
+    fun sendMessage(@Payload webSocketChatMessage: WebSocketChatMessage): WebSocketChatMessage {
+        return webSocketChatMessage
+    }
+
+    @MessageMapping("/newUser")
+    @SendTo("/topic/beagle-chat")
+    fun newUser(@Payload webSocketChatMessage: WebSocketChatMessage, headerAccessor: SimpMessageHeaderAccessor): WebSocketChatMessage {
+        headerAccessor.sessionAttributes?.put("username", webSocketChatMessage.sender)
+        return webSocketChatMessage
+    }
 
     //Chat Room path
 
