@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.messaging.handler.annotation.DestinationVariable
 import org.springframework.messaging.handler.annotation.MessageMapping
 import org.springframework.messaging.handler.annotation.Payload
-import org.springframework.messaging.handler.annotation.SendTo
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor
 import org.springframework.messaging.simp.SimpMessageSendingOperations
 import org.springframework.web.bind.annotation.RestController
@@ -15,29 +14,13 @@ import java.lang.String.format
 
 
 @RestController
-class WebSocketChatController {
+class WebSocketChannelChatController {
 
-    private val logger: Logger = LoggerFactory.getLogger(WebSocketChatController::class.java)
+    private val logger: Logger = LoggerFactory.getLogger(WebSocketChannelChatController::class.java)
 
     @Autowired
     private val messagingTemplate: SimpMessageSendingOperations? = null
 
-    // v 0.1
-
-    @MessageMapping("/sendMessage")
-    @SendTo("/topic/beagle-chat")
-    fun sendMessage(@Payload webSocketChatMessage: WebSocketChatMessage): WebSocketChatMessage {
-        return webSocketChatMessage
-    }
-
-    @MessageMapping("/newUser")
-    @SendTo("/topic/beagle-chat")
-    fun newUser(@Payload webSocketChatMessage: WebSocketChatMessage, headerAccessor: SimpMessageHeaderAccessor): WebSocketChatMessage {
-        headerAccessor.sessionAttributes?.put("username", webSocketChatMessage.sender)
-        return webSocketChatMessage
-    }
-
-    //Chat Room path
 
     @MessageMapping("/chat/{channelName}/sendMessage")
     fun sendMessage(@DestinationVariable channelName: String, @Payload chatMessage: WebSocketChatMessage) {
