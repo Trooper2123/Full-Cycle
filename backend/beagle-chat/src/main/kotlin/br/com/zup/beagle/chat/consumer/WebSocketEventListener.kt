@@ -10,8 +10,7 @@ import org.springframework.messaging.simp.stomp.StompHeaderAccessor
 import org.springframework.stereotype.Component
 import org.springframework.web.socket.messaging.SessionConnectedEvent
 import org.springframework.web.socket.messaging.SessionDisconnectEvent
-import java.lang.String.format
-import java.sql.DriverManager.println
+import java.text.MessageFormat.format
 
 
 @Component
