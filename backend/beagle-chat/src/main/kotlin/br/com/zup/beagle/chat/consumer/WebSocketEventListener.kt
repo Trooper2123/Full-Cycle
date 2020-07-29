@@ -32,7 +32,7 @@ class WebSocketEventListener {
         val username = headerAccessor.sessionAttributes?.get("username") as String?
         val channelName = headerAccessor.sessionAttributes?.get("channel_name") as String?
         if (username != null) {
-            logger.info("User Disconnected$username")
+            logger.info("User Disconnected $username")
             val chatMessage = WebSocketChatMessage()
             chatMessage.type = "Leave"
             chatMessage.sender = username

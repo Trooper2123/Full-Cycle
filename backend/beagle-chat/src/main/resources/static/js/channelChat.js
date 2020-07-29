@@ -2,7 +2,7 @@
 
 var usernamePage = document.querySelector('#userJoin');
 var chatPage = document.querySelector('#chatPage');
-var channel = $('#channel');
+var channel ="";
 var name = $("#name").val().trim();
 var waiting = document.querySelector('.waiting');
 var channelNameDisplay = document.querySelector('#channel-name-display');
@@ -10,6 +10,22 @@ var stompClient = null;
 var currentSubscription;
 var topic = null;
 var username;
+var channelString = "";
+
+function createGeneralChat() {
+     channel = "Zupper Chat";
+	console.log(channel);
+}
+
+const channelTyped = document.getElementById('channel')
+channelTyped.addEventListener('keyup', channelTyping)
+
+function channelTyping(e) {
+
+	channelString = e.target.value;
+	channel = channelString;
+	console.log(channel);
+}
 
 
 function connect(event) {
@@ -25,7 +41,7 @@ function connect(event) {
 
 
 function onConnected() {
-	enterChannel(channel.val());
+	enterChannel(channel);
 	waiting.classList.add('d-none');
 
 }
@@ -35,12 +51,11 @@ function onError(error) {
 }
 
 function enterChannel(newChannelName) {
-	var channelName = newChannelName;
 	Cookies.set('channelName', channel);
-	channelNameDisplay.textContent = channelName;
+	channelNameDisplay.textContent = newChannelName;
 	topic = `/app/chat/${newChannelName}`;
 
-	currentSubscription = stompClient.subscribe(`/topic/${channelName}`, onMessageReceived);
+	currentSubscription = stompClient.subscribe(`/topic/${newChannelName}`, onMessageReceived);
 	var username = $("#name").val().trim();
 	stompClient.send(`${topic}/addUser`,
 		{},
@@ -52,7 +67,7 @@ function enterChannel(newChannelName) {
 function sendMessage(event) {
 	var messageContent = $("#message").val().trim();
 	var username = $("#name").val().trim();
-	var newChannelName = $('#channel').val().trim();
+	var newChannelName = channel;
 	topic = `/app/chat/${newChannelName}`;
 	if(messageContent && stompClient) {
 		var chatMessage = {
