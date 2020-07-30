@@ -57,7 +57,7 @@ function enterChannel(newChannelName) {
 
 	currentSubscription = stompClient.subscribe(`/topic/${newChannelName}`, onMessageReceived);
 	var username = $("#name").val().trim();
-	stompClient.send(`${topic}/addUser`,
+	stompClient.send(`${topic}/add-user`,
 		{},
 		JSON.stringify({sender: username, type: 'JOIN'})
 	);
@@ -76,7 +76,7 @@ function sendMessage(event) {
 			type: 'CHAT'
 		};
 
-		stompClient.send(`${topic}/sendMessage`, {}, JSON.stringify(chatMessage));
+		stompClient.send(`${topic}/send-message`, {}, JSON.stringify(chatMessage));
 		document.querySelector('#message').value = '';
 	}
 	event.preventDefault();

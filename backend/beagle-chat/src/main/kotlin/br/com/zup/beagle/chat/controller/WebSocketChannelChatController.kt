@@ -1,5 +1,6 @@
 package br.com.zup.beagle.chat.controller
 
+import br.com.zup.beagle.chat.consumer.WebSocketEventListener
 import br.com.zup.beagle.chat.model.WebSocketChatMessage
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -8,28 +9,30 @@ import org.springframework.messaging.handler.annotation.DestinationVariable
 import org.springframework.messaging.handler.annotation.MessageMapping
 import org.springframework.messaging.handler.annotation.Payload
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor
-import org.springframework.messaging.simp.SimpMessageSendingOperations
+import org.springframework.messaging.simp.SimpMessagingTemplate
 import org.springframework.web.bind.annotation.RestController
 import java.lang.String.format
 
 
 @RestController
-class WebSocketChannelChatController {
+class WebSocketChannelChatController (
+        private val messagingTemplate: SimpMessagingTemplate
+){
 
-    private val logger: Logger = LoggerFactory.getLogger(WebSocketChannelChatController::class.java)
+    companion object {
+        private val logger: Logger =  LoggerFactory.getLogger(WebSocketEventListener::class.java)
+    }
 
-    @Autowired
-    private val messagingTemplate: SimpMessageSendingOperations? = null
+    val topicPath = "/topic/%s"
 
-
-    @MessageMapping("/chat/{channelName}/sendMessage")
+    @MessageMapping("/chat/{channelName}/send-message")
     fun sendMessage(@DestinationVariable channelName: String, @Payload chatMessage: WebSocketChatMessage) {
-        logger.info(channelName + " Chat message Recived is "+ chatMessage.content)
-        messagingTemplate?.convertAndSend(format("/topic/%s",channelName),chatMessage)
+        logger.info("\nChannel: " + channelName + "\nMessage Recived: "+ chatMessage.content + "\nFrom: "+ chatMessage.sender)
+        messagingTemplate.convertAndSend(format(topicPath,channelName),chatMessage)
 
     }
 
-    @MessageMapping("/chat/{channelName}/addUser")
+    @MessageMapping("/chat/{channelName}/add-user")
     fun addUser(@DestinationVariable channelName: String, @Payload chatMessage: WebSocketChatMessage,
                 headerAccessor: SimpMessageHeaderAccessor) {
         val currentChannel = headerAccessor.sessionAttributes?.put("channel_name", channelName) as String?
@@ -37,9 +40,9 @@ class WebSocketChannelChatController {
             val leaveMessage = WebSocketChatMessage()
             leaveMessage.type = "Leave"
             leaveMessage.sender
-            messagingTemplate?.convertAndSend(format("/topic/%s", currentChannel), leaveMessage)
+            messagingTemplate.convertAndSend(format(topicPath, currentChannel), leaveMessage)
         }
         headerAccessor.sessionAttributes?.put("name",chatMessage.sender)
-        messagingTemplate?.convertAndSend(format("/topic/%s",channelName), chatMessage)
+        messagingTemplate.convertAndSend(format(topicPath,channelName), chatMessage)
     }
 }

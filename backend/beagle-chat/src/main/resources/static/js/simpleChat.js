@@ -16,7 +16,7 @@ function connect(event) {
 }
 function connectionSuccess() {
     stompClient.subscribe('/topic/beagle-chat', onMessageReceived);
-    stompClient.send("/app/newUser", {}, JSON.stringify({
+    stompClient.send("/app/new-user", {}, JSON.stringify({
         sender : name,
         type : 'newUser'
     }))
@@ -29,7 +29,7 @@ function sendMessage(event) {
             content : document.querySelector('#chatMessage').value,
             type : 'CHAT'
         };
-        stompClient.send("/app/sendMessage", {}, JSON
+        stompClient.send("/app/send-message", {}, JSON
             .stringify(chatMessage));
         document.querySelector('#chatMessage').value = '';
     }

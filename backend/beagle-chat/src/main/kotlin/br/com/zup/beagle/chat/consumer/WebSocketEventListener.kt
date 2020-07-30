@@ -3,9 +3,8 @@ package br.com.zup.beagle.chat.consumer
 import br.com.zup.beagle.chat.model.WebSocketChatMessage
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.event.EventListener
-import org.springframework.messaging.simp.SimpMessageSendingOperations
+import org.springframework.messaging.simp.SimpMessagingTemplate
 import org.springframework.messaging.simp.stomp.StompHeaderAccessor
 import org.springframework.stereotype.Component
 import org.springframework.web.socket.messaging.SessionConnectedEvent
@@ -14,12 +13,14 @@ import java.text.MessageFormat.format
 
 
 @Component
-class WebSocketEventListener {
+class WebSocketEventListener(
+        private val messagingTemplate: SimpMessagingTemplate
+){
 
-    private val logger: Logger = LoggerFactory.getLogger(WebSocketEventListener::class.java)
+    companion object {
+        private val logger: Logger =  LoggerFactory.getLogger(WebSocketEventListener::class.java)
+    }
 
-    @Autowired
-    val messagingTemplate: SimpMessageSendingOperations? = null
 
     @EventListener
     fun handleWebSocketConnectListener(event: SessionConnectedEvent?) {
@@ -36,7 +37,7 @@ class WebSocketEventListener {
             val chatMessage = WebSocketChatMessage()
             chatMessage.type = "Leave"
             chatMessage.sender = username
-            messagingTemplate?.convertAndSend(format("/channel/%s", channelName), chatMessage)
+            messagingTemplate.convertAndSend(format("/channel/%s", channelName), chatMessage)
         }
     }
 }
