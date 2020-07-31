@@ -19,7 +19,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/beagle-chat" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/beagle-bff" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -35,9 +35,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1595278938628">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="421" y="97" key="FileChooserDialogImpl" timestamp="1595868926392">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1595278938628" />
+    <state x="421" y="97" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1595868926392" />
   </component>
 </project>
