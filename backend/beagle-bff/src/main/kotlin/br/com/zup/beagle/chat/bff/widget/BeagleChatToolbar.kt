@@ -6,7 +6,7 @@ import br.com.zup.beagle.core.ServerDrivenComponent
 import br.com.zup.beagle.widget.Widget
 
 @RegisterWidget
-data class BeagleChatToolBar(
+data class BeagleChatToolbar(
         val children: List<ServerDrivenComponent>,
         val border: Border,
         val backGroundColor: String

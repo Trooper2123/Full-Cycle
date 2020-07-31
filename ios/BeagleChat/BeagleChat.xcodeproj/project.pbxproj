@@ -12,10 +12,11 @@
 		989714B924CF10200085316C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 989714B824CF10200085316C /* Assets.xcassets */; };
 		989714C724CF10210085316C /* BeagleChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989714C624CF10210085316C /* BeagleChatTests.swift */; };
 		989714D224CF10210085316C /* BeagleChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989714D124CF10210085316C /* BeagleChatUITests.swift */; };
-		989714E524CF12E10085316C /* HeaderChatWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989714E424CF12E10085316C /* HeaderChatWidget.swift */; };
-		989714E724CF12FC0085316C /* BubbleChatWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989714E624CF12FC0085316C /* BubbleChatWidget.swift */; };
+		989714E724CF12FC0085316C /* ChatContentWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989714E624CF12FC0085316C /* ChatContentWidget.swift */; };
 		989714E924CF13070085316C /* FooterChatWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989714E824CF13070085316C /* FooterChatWidget.swift */; };
-		989714EB24CF13190085316C /* ChatStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989714EA24CF13190085316C /* ChatStyles.swift */; };
+		9C59590D24D4547600F39813 /* BeagleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C59590C24D4547600F39813 /* BeagleConfig.swift */; };
+		9C59590F24D4552200F39813 /* LoginWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C59590E24D4552200F39813 /* LoginWidget.swift */; };
+		9C59591124D4567B00F39813 /* RegisterWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C59591024D4567B00F39813 /* RegisterWidget.swift */; };
 		FEAAAA9EC1509211BACACD36 /* Pods_BeagleChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E512529152CA5C15435DA72D /* Pods_BeagleChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,10 +50,11 @@
 		989714CD24CF10210085316C /* BeagleChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeagleChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		989714D124CF10210085316C /* BeagleChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeagleChatUITests.swift; sourceTree = "<group>"; };
 		989714D324CF10210085316C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		989714E424CF12E10085316C /* HeaderChatWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderChatWidget.swift; sourceTree = "<group>"; };
-		989714E624CF12FC0085316C /* BubbleChatWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleChatWidget.swift; sourceTree = "<group>"; };
+		989714E624CF12FC0085316C /* ChatContentWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatContentWidget.swift; sourceTree = "<group>"; };
 		989714E824CF13070085316C /* FooterChatWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterChatWidget.swift; sourceTree = "<group>"; };
-		989714EA24CF13190085316C /* ChatStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStyles.swift; sourceTree = "<group>"; };
+		9C59590C24D4547600F39813 /* BeagleConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeagleConfig.swift; sourceTree = "<group>"; };
+		9C59590E24D4552200F39813 /* LoginWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginWidget.swift; path = BeagleChat/DesignSystem/CustomWidgets/ChatWidgets/LoginWidget.swift; sourceTree = SOURCE_ROOT; };
+		9C59591024D4567B00F39813 /* RegisterWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWidget.swift; sourceTree = "<group>"; };
 		E512529152CA5C15435DA72D /* Pods_BeagleChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeagleChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF7FE37103D2C158D479846 /* Pods-BeagleChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeagleChat.debug.xcconfig"; path = "Target Support Files/Pods-BeagleChat/Pods-BeagleChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,8 +119,10 @@
 			isa = PBXGroup;
 			children = (
 				989714E024CF12670085316C /* DesignSystem */,
-				989714AF24CF101B0085316C /* AppDelegate.swift */,
 				989714B324CF101B0085316C /* ViewController.swift */,
+				989714AF24CF101B0085316C /* AppDelegate.swift */,
+				9C59590C24D4547600F39813 /* BeagleConfig.swift */,
+				9C59591024D4567B00F39813 /* RegisterWidget.swift */,
 				989714B824CF10200085316C /* Assets.xcassets */,
 				989714BD24CF10200085316C /* Info.plist */,
 			);
@@ -143,19 +147,10 @@
 			path = BeagleChatUITests;
 			sourceTree = "<group>";
 		};
-		989714DF24CF12610085316C /* Styles */ = {
-			isa = PBXGroup;
-			children = (
-				989714EA24CF13190085316C /* ChatStyles.swift */,
-			);
-			path = Styles;
-			sourceTree = "<group>";
-		};
 		989714E024CF12670085316C /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
 				989714E124CF12880085316C /* CustomWidgets */,
-				989714DF24CF12610085316C /* Styles */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -172,9 +167,9 @@
 			isa = PBXGroup;
 			children = (
 				989714E324CF12AC0085316C /* ChatWidgetsTests */,
-				989714E424CF12E10085316C /* HeaderChatWidget.swift */,
-				989714E624CF12FC0085316C /* BubbleChatWidget.swift */,
+				989714E624CF12FC0085316C /* ChatContentWidget.swift */,
 				989714E824CF13070085316C /* FooterChatWidget.swift */,
+				9C59590E24D4552200F39813 /* LoginWidget.swift */,
 			);
 			path = ChatWidgets;
 			sourceTree = "<group>";
@@ -368,10 +363,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C59591124D4567B00F39813 /* RegisterWidget.swift in Sources */,
+				9C59590F24D4552200F39813 /* LoginWidget.swift in Sources */,
 				989714E924CF13070085316C /* FooterChatWidget.swift in Sources */,
-				989714E524CF12E10085316C /* HeaderChatWidget.swift in Sources */,
-				989714E724CF12FC0085316C /* BubbleChatWidget.swift in Sources */,
-				989714EB24CF13190085316C /* ChatStyles.swift in Sources */,
+				989714E724CF12FC0085316C /* ChatContentWidget.swift in Sources */,
+				9C59590D24D4547600F39813 /* BeagleConfig.swift in Sources */,
 				989714B424CF101B0085316C /* ViewController.swift in Sources */,
 				989714B024CF101B0085316C /* AppDelegate.swift in Sources */,
 			);

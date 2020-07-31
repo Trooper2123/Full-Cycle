@@ -1,8 +1,8 @@
 //
-//  HeaderChatWidget.swift
+//  LoginWidget.swift
 //  BeagleChat
 //
-//  Created by Eduardo Raffi on 27/07/20.
+//  Created by Thomas Almeida on 31/07/20.
 //  Copyright © 2020 Zup. All rights reserved.
 //
 
