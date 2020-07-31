@@ -13,9 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        android:name="br.com.zup.beagle.chat.config.AppApplication"
+        android:name="br.com.zup.beagle.chat.beagle.AppApplication"
         tools:ignore="MissingClass">
-        <activity android:name="br.com.zup.beagle.chat.config.AppBeagleActivity" />
+        <activity android:name="br.com.zup.beagle.chat.beagle.AppBeagleActivity" />
         <activity android:name="br.com.zup.beagle.chat.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

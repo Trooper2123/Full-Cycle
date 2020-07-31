@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/backend.iml" filepath="$PROJECT_DIR$/.idea/backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beagle-bff/bff.iml" filepath="$PROJECT_DIR$/beagle-bff/bff.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beagle-chat/web-socket.iml" filepath="$PROJECT_DIR$/beagle-chat/web-socket.iml" />
     </modules>
   </component>
 </project>
