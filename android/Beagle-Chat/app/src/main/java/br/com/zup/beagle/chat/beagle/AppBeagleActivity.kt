@@ -1,4 +1,4 @@
-package br.com.zup.beagle.chat.config
+package br.com.zup.beagle.chat.beagle
 
 import android.os.Bundle
 import android.view.View

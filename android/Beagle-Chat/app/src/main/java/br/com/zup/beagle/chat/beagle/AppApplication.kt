@@ -1,6 +1,7 @@
-package br.com.zup.beagle.chat.config
+package br.com.zup.beagle.chat.beagle
 
 import android.app.Application
+import br.com.zup.beagle.chat.config.BeagleSetup
 
 class AppApplication: Application() {
 

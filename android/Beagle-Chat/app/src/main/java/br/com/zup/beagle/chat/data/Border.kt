@@ -1,4 +1,4 @@
-package br.com.zup.beagle.chat.bff.data
+package br.com.zup.beagle.chat.data
 
 data class Border(
         val color: String,

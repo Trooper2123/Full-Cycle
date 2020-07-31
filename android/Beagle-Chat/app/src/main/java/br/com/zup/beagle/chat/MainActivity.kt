@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val intent = BeagleActivity.newIntent(this, ScreenRequest("/welcome"))
+        val intent = BeagleActivity.newIntent(this, ScreenRequest("/chat"))
         startActivity(intent)
         finish()
     }
