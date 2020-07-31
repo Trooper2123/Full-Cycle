@@ -1,7 +1,8 @@
 package br.com.zup.beagle.chat.bff.builder
 
 import br.com.zup.beagle.annotation.BeaglePreview
-import br.com.zup.beagle.chat.bff.components.chat.footer.CustomFooterChatComponent
+import br.com.zup.beagle.chat.bff.components.chat.CustomChatComponent
+import br.com.zup.beagle.chat.bff.data.WebSocketConfig
 import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.layout.NavigationBar
 import br.com.zup.beagle.widget.layout.Screen
@@ -17,8 +18,14 @@ class ScreenChatBuilder : ScreenBuilder {
             ),
             child = Container(
                     children = listOf(
-                            CustomFooterChatComponent().customFooterChatComponent()
+                            //TODO: header render goes here
+                            CustomChatComponent(
+                                    backgroundColor = "#F0F0F0",
+                                    //TODO: fix websocket URL
+                                    webSocketConfig = WebSocketConfig(url = "ws.localhost:8080")
+                            )
                     )
             )
     )
 }
+
